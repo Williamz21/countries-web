@@ -1,9 +1,10 @@
 .tool-bar{
-    background-color: hsl(0, 0%, 100%);
+    background-color: var(--White);
     box-shadow: 0px -2px 32px -20px rgba(0,0,0,0.27);
 }
 
 .nav-bar{
+    color: var(--text);
     width: min(90%,1200px);
     margin: 0 auto;
     display: flex;
