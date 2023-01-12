@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 import { HomeService } from '../../services/home.service';
 
 @Component({
@@ -11,34 +10,36 @@ import { HomeService } from '../../services/home.service';
 export class HomeComponent implements OnInit{
   selectFormControl = new FormControl('');
   countries:Array<any> = [];
+  countryFiltered:Array<any> = [];
+  filterBy:any;
 
-  constructor(public router: Router,private newService: HomeService) {
+  constructor(private newService: HomeService) {
   }
 
   ngOnInit(): void {
     this.getAllCountries()
   }
 
-  seeRegion(){
-    console.log(this.selectFormControl.value)
-  }
-
   getAllCountries() {
     this.newService.getAllCountries().subscribe( (response: any) => {
       this.countries = response;
-      console.log();
+      this.countryFiltered = [...response]
     })
   }
 
   getAllByRegion(){
     if(this.selectFormControl.value){
       this.newService.getAllByRegion(this.selectFormControl.value).subscribe( (response: any) => {
-        this.countries = response;
-        console.log();
+        this.countryFiltered = response;
       })
     }
     else{
       this.getAllCountries()
     }
+  }
+
+  filter() {
+    if(this.selectFormControl.value!='') this.selectFormControl = new FormControl('');
+    this.countryFiltered = [...this.countries.filter(user => user.name.includes(this.filterBy))];
   }
 }

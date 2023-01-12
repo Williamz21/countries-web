@@ -1,0 +1,130 @@
+.country{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    transition: .3s;
+    column-gap: 2rem;
+}
+
+.no-bold{
+    font-weight: normal;
+}
+
+.bold{
+    font-weight: 600;
+}
+
+.img{
+    width: 100%;
+    height: 100%;
+}
+
+.button{
+    margin: 5rem 0;
+    display: inline-block;
+    padding: 1rem 2rem;
+    text-align: center;
+    background-color: var(--White);
+    color: var(--text);
+    transition: .3s;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.27);
+    border-radius: .5rem;
+}
+
+.button div {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.button div a{
+    text-decoration: none;
+    color: var(--text);
+}
+
+.button div svg{
+    fill: var(--text);
+}
+
+.country-data{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.country-data2{
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+    justify-content: center;
+    row-gap: 2rem;
+}
+
+.button2{
+    display: inline-block;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    text-align: center;
+    background-color: var(--White);
+    color: var(--text);
+    transition: .3s;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.27);
+    border-radius: .5rem;
+}
+
+@media (max-width: 1200px) {
+    .country{
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 5rem;
+        gap: 2rem;
+    }
+
+    .information{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+
+    .country-data{
+        align-items: center;
+        justify-content: flex-start;
+        gap: 2rem;
+    }
+
+    .country-data2{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+
+    .button{
+        margin: 2rem 0;
+    }
+}
+
+@media (max-width: 900px) {
+    .country-data{
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+}
+
+.button,.button2{
+    transition: ease-out .3s;
+}
+
+.button:hover,.button2:hover{
+    font-weight: bold;
+    transform: scale(1.1);
+    transition: ease-out .3s;
+}

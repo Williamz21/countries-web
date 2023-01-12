@@ -10,7 +10,7 @@ export class AppComponent {
 
   changeTheme(){
     const icon = document.getElementById('theme-icon') as HTMLImageElement;
-    const text = document.getElementById('theme-text') as HTMLSpanElement
+    const text = document.getElementById('theme-text') as HTMLSpanElement;
     if(icon){
       document.body.classList.toggle('dark-theme');
       if(document.body.classList.contains('dark-theme')){

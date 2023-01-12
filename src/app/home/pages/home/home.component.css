@@ -23,7 +23,7 @@
 .card{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
     row-gap: 5rem;
 }
@@ -56,10 +56,3 @@
     font-weight: 800;
 }
 
-.text{
-    font-size: 14px;
-}
-
-.text span{
-    font-weight: 600;
-}
